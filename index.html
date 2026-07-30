@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>월간 뉴스레터 아카이브</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; margin: 0; background: #f4f4f4; }
+        .header { text-align: center; padding: 20px; background: #5C4033; color: #fff; }
+        
+        /* 버튼 메뉴 디자인 */
+        .month-menu { display: flex; justify-content: center; gap: 10px; padding: 20px; background: #fff; }
+        .month-menu button {
+            padding: 10px 20px; border: 1px solid #ddd; background: #fafafa; 
+            cursor: pointer; border-radius: 5px; font-weight: bold;
+        }
+        .month-menu button:hover, .month-menu button.active { background: #8B7355; color: white; border-color: #8B7355;} 
+        
+        /* 뉴스레터 표시 영역 */
+        .content-area { max-width: 800px; margin: 20px auto; height: 100vh; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- 요청하신 제목으로 수정되었습니다 -->
+        <h1>월간 뉴스레터 모아보기</h1>
+    </div>
+
+    <!-- 월별 버튼 영역 -->
+    <div class="month-menu">
+        <button onclick="showNewsletter('05.html', this)">5월</button>
+        <button onclick="showNewsletter('06.html', this)" class="active">6월</button>
+    </div>
+
+    <!-- 뉴스레터가 보여지는 영역 -->
+    <div class="content-area">
+        <!-- 기본값으로 가장 최신인 6월을 띄워둡니다 -->
+        <iframe id="newsFrame" src="06.html"></iframe>
+    </div>
+
+    <script>
+        // 버튼 클릭 시 화면을 바꿔주는 자바스크립트
+        function showNewsletter(filename, btn) {
+            document.getElementById('newsFrame').src = filename;
+            
+            // 모든 버튼의 활성화(활성 색상) 색상 해제
+            let buttons = document.querySelectorAll('.month-menu button');
+            buttons.forEach(b => b.classList.remove('active'));
+            
+            // 방금 클릭한 버튼만 색상 활성화
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>
