@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-
     <div class="header">
         <h1>월간 뉴스레터 모아보기</h1>
     </div>
@@ -40,14 +39,15 @@
         <button onclick="showNewsletter('06.html', this)">6월</button>
         <button onclick="showNewsletter('07.html', this)">7월</button>
         <button onclick="showNewsletter('08.html', this)">8월</button>
-        <!-- 9월 버튼을 추가하고 활성화(active) 클래스를 부여했습니다 -->
-        <button onclick="showNewsletter('09.html', this)" class="active">9월</button>
+        <button onclick="showNewsletter('09.html', this)">9월</button>
+        <!-- 10월 버튼을 추가하고 활성화(active) 클래스를 부여했습니다 -->
+        <button onclick="showNewsletter('10.html', this)" class="active">10월</button>
     </div>
 
     <!-- 뉴스레터가 보여지는 영역 -->
     <div class="content-area">
-        <!-- 기본값으로 최신인 9월(09.html)을 표시합니다 -->
-        <iframe id="newsFrame" src="09.html"></iframe>
+        <!-- 기본값으로 가장 최신인 10월(10.html)을 표시합니다 -->
+        <iframe id="newsFrame" src="10.html"></iframe>
     </div>
 
     <script>
